@@ -37,7 +37,7 @@ import time => no usada aún  en su lugar uso datetime
 # Funciones
  **Print => controla las salidas de informacion por pantalla y al archivo log.**
  
-  --Parametros de entrada :
+            --Parametros de entrada :
   
               Data : es lo que hay que mostrar por pantalla(print) o guardar en archivo log
               
@@ -50,14 +50,15 @@ import time => no usada aún  en su lugar uso datetime
 
 
 **beep => reproduce un sonido**
-  --Parametros de entrada :
+            --Parametros de entrada :
 
                 NSound: numero de sonido , se pretende un numero asociado a un topo de sonido 
                         sólo funciona con 0 de momento 
 
 
 **Log_Error => guarda errores en archivolog de errores**
---Parametros de entrada :
+         
+          --Parametros de entrada :
   
               Data : es lo que hay que mostrar por pantalla(print) o guardar en archivo log
               
@@ -67,5 +68,20 @@ import time => no usada aún  en su lugar uso datetime
                     1  solo guarda Data en archivo log 
                 
 **Exist_Archivo_Ruta => verificamos previamente si existe un Directorio o Archivo en disco**
+    
+          --Parametros de entrada :
+  
+              Directorio_datos : ruta de carpeta general donde se ejecuta el programa 
+
+              directorio_o_archivo :  directorio o ruta de archivo a verificar si existe o no .
+              
+              log: es un valor numerico que condiciona lo que hay que hacer con Data
+              
+          --Parametros de retorno :
+              True si existe la carpeta o archivo
+              False si no existe la carpeta o directorio 
+
+**RutaCompuesta => Compone la ruta a partir de un directorio y un nombre de archivo**
+
 
 
