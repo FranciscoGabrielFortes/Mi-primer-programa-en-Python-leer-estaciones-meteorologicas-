@@ -82,6 +82,14 @@ import time => no usada aún  en su lugar uso datetime
               False si no existe la carpeta o directorio 
 
 **RutaCompuesta => Compone la ruta a partir de un directorio y un nombre de archivo**
+           
+           --Parametros de entrada :
+  
+              Ruta : ruta de carpeta general donde se ejecuta el programa 
+
+              directorio_o_archivo :  directorio o ruta de archivo a verificar si existe o no .
+              
+              log: es un valor numerico que condiciona lo que hay que hacer con Data
 
 
 
