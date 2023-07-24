@@ -1,8 +1,8 @@
 # Mi-primer-programa-en-Python-leer-estaciones-meteorologicas-desde-web
-Lectura datos estaciones meteorológicas de España (web  publica agencia estatal de meteorología )
+Lectura datos estaciones meteorológicas de España (web  pública agencia estatal de meteorología )
 
 # Propósito: 
-          Obtener  datos metereologicos de estaciones metereologicas de españa.
+          Obtener  datos metereológicos de estaciones metereológicas de españa.
 
 # Librerias:
 
@@ -28,20 +28,20 @@ from io import StringIO => para poder 'leer' los datos dascargados(string) como 
 
 from IPython.display import clear_output => CLS borrar la salida de consola
 
-from time import sleep => Retrasar n segundos la ejecucion 
+from time import sleep => Retrasar n segundos la ejecución 
 
 from threading import Timer => para poder hacer temporizador para  subprocesos (hilos) 
 
 import time => no usada aún  en su lugar uso datetime
 
 # Funciones
- **Print => controla las salidas de informacion por pantalla y al archivo log.**
+ **Print => controla las salidas de información por pantalla y al archivo log.**
  
-            --Parametros de entrada :
+            --Parámetros de entrada :
   
               Data : es lo que hay que mostrar por pantalla(print) o guardar en archivo log
               
-              log: es un valor numerico que condiciona lo que hay que hacer con Data
+              log: es un valor numérico que condiciona lo que hay que hacer con Data
               
                     0  no hace nada, no presenta ni guarda en log
                     1  solo guarda Data en archivo log 
@@ -50,50 +50,50 @@ import time => no usada aún  en su lugar uso datetime
 
 
 **beep => reproduce un sonido**
-            --Parametros de entrada :
+            --Parámetros de entrada :
 
-                NSound: numero de sonido , se pretende un numero asociado a un topo de sonido 
+                NSound: número de sonido , se pretende un número asociado a un tipo de sonido 
                         sólo funciona con 0 de momento 
 
 
 **Log_Error => guarda errores en archivolog de errores**
          
-          --Parametros de entrada :
+          --Parámetros de entrada :
   
               Data : es lo que hay que mostrar por pantalla(print) o guardar en archivo log
               
-              log: es un valor numerico que condiciona lo que hay que hacer con Data
+              log: es un valor numérico que condiciona lo que hay que hacer con Data
               
                     0  no hace nada, no presenta ni guarda en log
                     1  solo guarda Data en archivo log 
                 
 **Exist_Archivo_Ruta => verificamos previamente si existe un Directorio o Archivo en disco**
     
-          --Parametros de entrada :
+          --Parámetros de entrada :
   
               Directorio_datos : ruta de carpeta general donde se ejecuta el programa 
 
               directorio_o_archivo :  directorio o ruta de archivo a verificar si existe o no .
               
-              log: es un valor numerico que condiciona lo que hay que hacer con Data
+              log: es un valor numérico que condiciona lo que hay que hacer con Data
               
-          --Parametros de retorno :
+          --Parámetros de retorno :
               True si existe la carpeta o archivo
               False si no existe la carpeta o directorio 
 
 **RutaCompuesta => Compone la ruta a partir de un directorio y un nombre de archivo**
            
-           --Parametros de entrada :
+           --Parámetros de entrada :
   
               Ruta : ruta de carpeta general donde se ejecuta el programa 
 
               directorio_o_archivo :  directorio o ruta de archivo a verificar si existe o no .
               
-              log: es un valor numerico que condiciona lo que hay que hacer con Data
+              log: es un valor numérico que condiciona lo que hay que hacer con Data
 
 **Abrir_archivo_df => Abre un archivo DAtaframe guardado en disco como csv**
 
-           --Parametros de entrada :
+           --Parámetros de entrada :
   
               Ruta : ruta de carpeta  donde se encuentra  el dataframe
 
@@ -103,12 +103,12 @@ import time => no usada aún  en su lugar uso datetime
               
               Head=0: no lo uso actualmente , se trata de indicar en que linea se encuentran las métricas(nombre de las variables) en el archivo.
               
-              log: es un valor numerico que condiciona lo que hay que hacer con Data
+              log: es un valor numérico que condiciona lo que hay que hacer con Data
 
 **crear_Estaciones_df => actualiza el archivo estaciones_df cuando es creado a partir de una lista antigua**
 
-           --Parametros de entrada :
-              Estaciones_df => los datos disponibles de las estaciones enel dataframe Estaciones _df .
+           --Parámetros de entrada :
+              Estaciones_df => los datos disponibles de las estaciones en el dataframe Estaciones _df .
               
            --Salida : 
               Estaciones_df
@@ -117,7 +117,7 @@ import time => no usada aún  en su lugar uso datetime
 
 **Guardar_archivo_df => guarda un archivo_df en formato CSV**
           
-          --Parametros de entrada :
+          --Parámetros de entrada :
           
               Archivo_df :  el archivo que queremos guardar en disco 
   
@@ -125,27 +125,27 @@ import time => no usada aún  en su lugar uso datetime
 
               Nombre_archivo : Nombre del archivo que deseamos obtener.
 
-              Delimt : valor del separador de los datos normalmente Delimt=','.
+              Delimt : valor del separador de los datos, normalmente Delimt=','.
                 
-              log: es un valor numerico que condiciona lo que hay que hacer con Data
+              log: es un valor numérico que condiciona lo que hay que hacer con Data
               
 
 **Descagar_data_URL =>  descaraga de la web los dagtos de la url dada**
-           --Parametros de entrada :
+           --Parámetros de entrada :
           
               remote_url :  la url que contiene los datos que queremos obtener .
                 
-              log: es un valor numerico que condiciona lo que hay que hacer con Data
+              log: es un valor numérico que condiciona lo que hay que hacer con Data
            
            --Salida : 
               data.text
-              retorna los datos descargados en formato texto para su podterior tratamiento .
+              retorna los datos descargados en formato texto para su posterior tratamiento .
               
 **Actualizar_estaciones=> descarga de la web la lista e información de las distintas estaciones metereológicas**
 
-           --Parametros de entrada :
+           --Parámetros de entrada :
           
-              Estaciones_df :  archivo para actualizar su contenido en estaciones, solo se agregan np se eliminan las ya existentes ..
+              Estaciones_df :  archivo para actualizar su contenido en estaciones, solo se agregan, no se eliminan las ya existentes ..
            
            --Salida : 
               
@@ -155,18 +155,18 @@ import time => no usada aún  en su lugar uso datetime
 
 **Inicio_automático=> ejecutar la actualización de las estaciones cada cierto tiempo**
          
-          --Parametros de entrada :
+          --Parámetros de entrada :
           
               Minutos :  cada cuantos minutos se actualizan los datos de las estaciones .
               
           --Salida : 
               
               t : variable de clase MyInfiniteTimer 
-              En_ejecucion: variable que indica si está activa la temporización 
+              En_ejecución: variable que indica si está activa la temporización 
 
 **Stop_automatico => detener la captura automatica cada cierto tiempo**
 
-          --Parametros de entrada :
+          --Parámetros de entrada :
           
               t : variable de clase MyInfiniteTimer 
               
@@ -176,13 +176,13 @@ import time => no usada aún  en su lugar uso datetime
 
 **Programa_ejecutar => realiza la captura de datos de la web recorre las estaciones y las actualiza.**
           
-          --Parametros de entrada :
+          --Parámetros de entrada :
                         
               log: es un valor numerico que condiciona lo que hay que hacer con Data
 
 
 **Duplicados=> verifica si hay estaciones con el mismo INDCLIM es decir duplicadas .**
-          --Parametros de entrada :
+          --Parámetros de entrada :
                         
               log: es un valor numerico que condiciona lo que hay que hacer con Data
 
