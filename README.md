@@ -91,5 +91,108 @@ import time => no usada aún  en su lugar uso datetime
               
               log: es un valor numerico que condiciona lo que hay que hacer con Data
 
+**Abrir_archivo_df => Abre un archivo DAtaframe guardado en disco como csv**
 
+           --Parametros de entrada :
+  
+              Ruta : ruta de carpeta  donde se encuentra  el dataframe
+
+              Nombre_archivo : Nombre del archivo que deseamos obtener.
+
+              Delimt : valor del separador de los datos normalmente Delimt=','.
+              
+              Head=0: no lo uso actualmente , se trata de indicar en que linea se encuentran las métricas(nombre de las variables) en el archivo.
+              
+              log: es un valor numerico que condiciona lo que hay que hacer con Data
+
+**crear_Estaciones_df => actualiza el archivo estaciones_df cuando es creado a partir de una lista antigua**
+
+           --Parametros de entrada :
+              Estaciones_df => los datos disponibles de las estaciones enel dataframe Estaciones _df .
+              
+           --Salida : 
+              Estaciones_df
+              añade como  fecha de actualización  la fecha actual a cada estación del archivo. 
+              añade las url de escarga de cada estación al archivo.
+
+**Guardar_archivo_df => guarda un archivo_df en formato CSV**
+          
+          --Parametros de entrada :
+          
+              Archivo_df :  el archivo que queremos guardar en disco 
+  
+              Ruta : ruta de carpeta  donde se encuentra  el dataframe
+
+              Nombre_archivo : Nombre del archivo que deseamos obtener.
+
+              Delimt : valor del separador de los datos normalmente Delimt=','.
+                
+              log: es un valor numerico que condiciona lo que hay que hacer con Data
+              
+
+**Descagar_data_URL =>  descaraga de la web los dagtos de la url dada**
+           --Parametros de entrada :
+          
+              remote_url :  la url que contiene los datos que queremos obtener .
+                
+              log: es un valor numerico que condiciona lo que hay que hacer con Data
+           
+           --Salida : 
+              data.text
+              retorna los datos descargados en formato texto para su podterior tratamiento .
+              
+**Actualizar_estaciones=> descarga de la web la lista e información de las distintas estaciones metereológicas**
+
+           --Parametros de entrada :
+          
+              Estaciones_df :  archivo para actualizar su contenido en estaciones, solo se agregan np se eliminan las ya existentes ..
+           
+           --Salida : 
+              
+              Estaciones_df : archivo ya actualizado 
+
+**class MyInfiniteTimer():=> clase para poder ejecutar un "hilo" cada cierto tiempo .....**
+
+**Inicio_automático=> ejecutar la actualización de las estaciones cada cierto tiempo**
+         
+          --Parametros de entrada :
+          
+              Minutos :  cada cuantos minutos se actualizan los datos de las estaciones .
+              
+          --Salida : 
+              
+              t : variable de clase MyInfiniteTimer 
+              En_ejecucion: variable que indica si está activa la temporización 
+
+**Stop_automatico => detener la captura automatica cada cierto tiempo**
+
+          --Parametros de entrada :
+          
+              t : variable de clase MyInfiniteTimer 
+              
+          --Salida : 
+              
+              En_ejecucion: variable que indica si está activa la temporización 
+
+**Programa_ejecutar => realiza la captura de datos de la web recorre las estaciones y las actualiza.**
+          
+          --Parametros de entrada :
+                        
+              log: es un valor numerico que condiciona lo que hay que hacer con Data
+
+
+**Duplicados=> verifica si hay estaciones con el mismo INDCLIM es decir duplicadas .**
+          --Parametros de entrada :
+                        
+              log: es un valor numerico que condiciona lo que hay que hacer con Data
+
+**menu_lista => menu de uso del programa**
+
+          
+
+
+
+
+
+          
 
